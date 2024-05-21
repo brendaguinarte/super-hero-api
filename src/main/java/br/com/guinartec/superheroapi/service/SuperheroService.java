@@ -12,7 +12,16 @@ public class SuperheroService {
 
     @Autowired
     private SuperheroRepository superheroRepository;
+
     public List<Superhero> getSuperhero(){
         return superheroRepository.findAll();
+    }
+
+    public Superhero postSuperhero(Superhero superhero){
+        return superheroRepository.save(superhero);
+    }
+
+    public void deleteSuperhero(Long id){
+        superheroRepository.deleteById(id);
     }
 }
